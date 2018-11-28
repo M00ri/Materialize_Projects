@@ -106,41 +106,51 @@
       <!-- START HERE -->
 
       <!-- CHIPS -->
-      <div>Web development</div>
-      <div>Web design</div>
-      <div>Programming</div>
+      <div class="chip">Web development</div>
+      <div class="chip">Web design</div>
+      <div class="chip">Programming</div>
 
       <br />
       <br />
 
       <!-- CHIPS WITH CLOSE -->
-      <div>Web development <i></i></div>
-      <div>Web design <i></i></div>
-      <div>Programming <i></i></div>
+      <div class="chip">
+        Web development
+        <i class="close material-icons">close</i>
+      </div>
+      <div class="chip">
+        Web design <i class="close material-icons">close</i>
+      </div>
+      <div class="chip">
+        Programming <i class="close material-icons">close</i>
+      </div>
+      
 
       <br />
       <br />
 
       <!-- CHIPS WITH IMAGES -->
-      <div><img src="" /> John Doe</div>
-      <div><img src="" /> Brian Jackson</div>
-      <div><img src="" /> Lori Smith</div>
+      <div class="chip"><img src="IMG/IMG1.JPG" /> John Doe</div>
+      <div class="chip"><img src="IMG/IMG2.JPG" /> Brian Jackson</div>
+      <div class="chip"><img src="IMG/IMG3.JPG" /> Lori Smith</div>
 
       <!-- CHIPS INPUT WITH AUTOCOMPLETE -->
-      <div></div>
+      <div class="chips-input">
+
+      </div>
 
       <!-- PAGINATION -->
-      <ul>
-        <li>
-          <a href="#!"> <i></i> </a>
+      <ul class="pagination">
+        <li class="disabled">
+          <a href="#!"> <i class="material-icons">chevron_left</i> </a>
         </li>
-        <li><a href="#!">1</a></li>
-        <li><a href="#!">2</a></li>
-        <li><a href="#!">3</a></li>
-        <li><a href="#!">4</a></li>
-        <li><a href="#!">5</a></li>
-        <li>
-          <a href="#!"> <i></i> </a>
+        <li class="waves-effect"><a href="#!">1</a></li>
+        <li class="waves-effect active"><a href="#!">2</a></li>
+        <li class="waves-effect"><a href="#!">3</a></li>
+        <li class="waves-effect"><a href="#!">4</a></li>
+        <li class="waves-effect"><a href="#!">5</a></li>
+        <li class="waves-effect">
+          <a href="#!"> <i class="material-icons">chevron_right</i> </a>
         </li>
       </ul>
 
@@ -153,18 +163,35 @@
       type="text/javascript"
       src="https://code.jquery.com/jquery-3.2.1.min.js"
     ></script>
-    <script type="text/javascript" src="js/MATERIAL.JS"></script>
+    <script type="text/javascript" src="js/materialize.min.js"></script>
 
     <script>
       $(document).ready(function() {
-        $('.dropdown-button').dropdown({
+        $(".dropdown-button").dropdown({
           constrainWidth: false,
           hover: true,
           belowOrigin: true,
-          alignment: 'left'
+          alignment: "left"
         });
 
         // JAVASCRIPT START HERE //
+        $('.chips-input').material_chip({
+          placeholder: 'Enter a Tag',
+          secondaryPlaceholder: '+tag',
+          autocompleteOptions: {
+            data: {
+              'html': null,
+              'css': null,
+              'javascript': null
+            }
+          }
+        })
+
+        // Add chip event
+        $('.chips-input').on('chip.add', function(e, chip){
+          console.log(`You added a chip - ${chip.tag}`)
+        })
+
       });
     </script>
   </body>
