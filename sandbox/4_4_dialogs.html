@@ -11,6 +11,15 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Materialize Sandbox</title>
+
+  <style>
+  .flex-stuff{
+    display: flex;
+    justify-content: space-around
+  }
+
+  
+  </style>
 </head>
 
 <body>
@@ -124,24 +133,27 @@
 
     <!-- START HERE -->
 
-    <!-- TOAST BUTTON -->
-    <a class="btn">Show Toast</a>
+    <div class="flex-stuff">
+      <!-- TOAST BUTTON -->
+      <a id="toast1" class="btn">Show Toast</a>
 
-    <!-- ROUNDED TOAST -->
-    <a class="btn">Rounded Toast</a>
+      <!-- ROUNDED TOAST -->
+      <a id="toast2" class="btn">Rounded Toast</a>
 
-    <!-- CALLBACK ON DISMISS -->
-    <a class="btn">Toast With Callback</a>
+      <!-- CALLBACK ON DISMISS -->
+      <a id="toast3" class="btn">Toast With Callback</a>
+    </div>
 
     <br>
     <br>
 
     <!-- TOOLTIPS -->
-    <a class="btn">Bottom Tooltip</a>
-    <a class="btn">Top Tooltip</a>
-    <a class="btn">Right Tooltip</a>
-    <a class="btn">Left Tooltip</a>
-
+    <div class="flex-stuff">
+      <a class="btn tooltipped" data-delay="2000" data-position="bottom" data-tooltip="I am a tooltip">Bottom Tooltip</a>
+      <a class="btn tooltipped" data-position="top" data-tooltip="I am a tooltip">Top Tooltip</a>
+      <a class="btn tooltipped" data-position="right" data-tooltip="I am a tooltip">Right Tooltip</a>
+      <a class="btn tooltipped" data-position="left" data-tooltip="I am a tooltip">Left Tooltip</a>
+    </div>
 
     <!-- END HERE -->
 
@@ -166,7 +178,35 @@
 
       // JAVASCRIPT START HERE //
 
+      // run toast
+      // $('#toast1').click(function(){
+      //   Materialize.toast('I am toast')
+      // })
+      document.querySelector('#toast1').addEventListener('click', function(){
+        Materialize.toast('I am toast', 3000)
+      })
 
+      // rounded toast
+      $('#toast2').click(function(){
+        Materialize.toast('I am toast', 3000, 'rounded')
+      })
+      
+      // toast callback
+      $('#toast3').click(function(){
+        Materialize.toast('I am toast', 3000, 'rounded', 
+        function() {
+          alert('Toast Dismissed!')
+        })
+      })
+      
+
+      // create toast
+      Materialize.toast('I am toast', 3000)
+
+      // remove all toasts
+      setTimeout(function(){
+        Materialize.Toast.removeAll()
+      }, 2000)
 
 
     });
