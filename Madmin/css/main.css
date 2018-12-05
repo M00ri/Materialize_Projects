@@ -1,0 +1,9 @@
+.loader {
+    position: absolute;
+    top: 40%;
+    left: 47%
+}
+
+.section-visitors .card-panel {
+    min-height: 380px;
+}
