@@ -1,3 +1,13 @@
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+main {
+    flex: 1 0 auto;
+  }
+      
 .loader {
     position: absolute;
     top: 40%;
@@ -6,4 +16,19 @@
 
 .section-visitors .card-panel {
     min-height: 380px;
+}
+
+.login {
+    margin-top: 150px;
+}
+
+.btn-extended {
+    display: block;
+    width: 80%;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.section-login h2 {
+    margin-bottom: 30px;
 }
