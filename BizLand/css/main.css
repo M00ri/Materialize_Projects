@@ -41,6 +41,17 @@
   margin-bottom: 0 !important;
 }
 
+.section-testimonials {
+  position: relative;
+  background: url(../img/code.jpg);
+  background-size: cover;
+  background-position: center;
+  border-top: #333 solid 5px; 
+  border-bottom: #333 solid 5px; 
+  min-height: 380px;
+}
+
+
 /* Media Queries */
 @media(max-width: 600px) {
   .main-header {
@@ -49,5 +60,9 @@
 
   .main-header .showcase {
     padding-top: 70px; 
+  }
+
+  .section-testimonials {
+    min-height: 850px;
   }
 }
