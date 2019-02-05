@@ -1,2 +1,2 @@
 # Materialize_Projects
-Some different Materialzie.css design Projects + a Sandbox for reference
+Some different Materialize.css design Projects + a Sandbox for reference
